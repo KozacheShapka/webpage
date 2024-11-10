@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KozacheShapka</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid #555;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 1;
+            margin-bottom: 20px; /* Added margin for spacing */
+        }
+        .social-button {
+            background-color: #333;
+            border: 1px solid #555;
+            border-radius: 35px;
+            padding: 10px 20px;
+            margin: 9px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+            width: calc(40% - 50px);
+            text-align: center;
+        }
+        .social-button:hover {
+            background-color: #555;
+            color: #fff;
+        }
+        .under-social-button {
+            background-color: #333;
+            border: 1px solid #555;
+            border-radius: 30px;
+            padding: 10px 20px;
+            margin: 9px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+            width: calc(90% - 50px);
+            text-align: center;
+        }
+        .under-social-button:hover {
+            background-color: #555;
+            color: #fff;
+        }
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            opacity: 0;
+            animation: twinkling 5s infinite;
+        }
+        @keyframes twinkling {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        .separator {
+            width: 29%;
+            height: 2px;
+            background-color: #555;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="avatar.jpg" alt="Avatar" class="avatar">
+    <h1>KozacheShapka</h1>
+    <div class="button-container">
+        <a href="https://t.me/xdalenis" class="social-button" target="_blank">Telegram</a>
+        <a href="https://www.tiktok.com/@kozacheshapka" class="social-button" target="_blank">TikTok</a>
+        <a href="https://discord.com/users/1078083210010964020" class="social-button" target="_blank">Discord</a>
+        <a href="https://osu.ppy.sh/users/19845344" class="social-button" target="_blank">osu!</a>
+        <a href="https://www.instagram.com/kozacheshapka" class="social-button" target="_blank">Instagram</a>
+        <a href="https://x.com/kozacheshapka" class="social-button" target="_blank">X (Twitter)</a>
+    </div>
+    <div class="separator"></div>
+    <div class="button-container">
+        <a href="https://t.me/kozacheshapka_blog" class="under-social-button" target="_blank">Telegram Channel</a>
+    </div>
+    <div class="stars"></div>
+    <script>
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 5 + 's';
+            document.querySelector('.stars').appendChild(star);
+        }
+
+        for (let i = 0; i < 100; i++) {
+            createStar();
+        }
+    </script>
+</body>
+</html>
